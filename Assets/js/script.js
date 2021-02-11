@@ -31,9 +31,10 @@ function generatePassword() {
   }
 
   var chooseSpecialChar = window.confirm('Do you want special characters to be included?');
+  var choosenumbersChar = window.confirm('Do you want numeric characters to be included?');
   var chooseupperCase = window.confirm('Do you want upper case characters to be included?');
   var chooselowerCase = window.confirm('Do you want lower case characters to be included?');
-  var choosenumbersChar = window.confirm('Do you want numeric characters to be included?');
+
 
   if (chooseSpecialChar) {
     Array.prototype.push.apply(arrayHolderPassword, specialChar);
@@ -50,7 +51,7 @@ function generatePassword() {
     Array.prototype.push.apply(arrayHolderPassword, upperCase);
   }
 
-  //for loop to loop through the new array arrayHolderPassword with user input length stored in numberOfCharacters
+  //Loop Array
   for (var i = 0; i < numberOfCharacters; i++) {
     var newPasswordIndex = Math.floor(Math.random() * arrayHolderPassword.length);
     passwordString = passwordString + arrayHolderPassword[newPasswordIndex];
